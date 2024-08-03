@@ -1,0 +1,121 @@
+Version 3.2.3
+
+[Fixed] PHP 8.2: Dynamic Properties are deprecated - declared propertis at top of classes
+[Updated] Registration.php (declared properties at top of class)
+[Updated] Session.php (declared properties at top of class)
+[Updated] Adminfunctions.php (declared properties at top of class)
+[Updated] Login.php (declared properties at top of class)
+
+Version 3.2.1
+
+[Fixed] Updated login issue - changed session.php file
+
+Version 3.2
+
+[Fixed] Updated IPV6 issue in database, increased varchar to 49 characters.
+[Fixed] Issue with User Groups. Updated editGroup function in adminprocess.php file.
+[Updated] Session.php - added : to binded values to work with PHP v8 (eg, WHERE :session_id)
+[Fixed] $this->session->updateActiveUsers($this->username) to ($this->id) in Login.php
+[Fixed] Chart on front page of Admin Panel shows correctly.
+[Updated] to jQuery 3.6.0
+
+Version 3.1.5
+
+[Fixed] Updated problem being able to change username from admin panel.
+[Fixed] Correct Version number issue.
+
+Version 3.1
+
+[Fixed] Updated index.php sql query at bottom of page (around line 287) to prevent error caused when sql mode ONLY_FULL_GROUP_BY is turned on.
+[Fixed] Updated Functions.php page (line 301) to allow isMemberOfGroup function to work.
+[Fixed] Please add default value of 0 to timestamp column in user_sessions table to prevent error caused when SQL STRICT mode is turned on.
+
+Version 3
+
+[Changes] Re-design of how User Sessions are handled.
+[Changes] Improved 'Remember Me' cookie handling - More secure
+[Changes] Improved User Password Reset feature - More secure
+[Changes] Multiple login from one account enabled - turn on/off
+[Updated] New tables in database - 'user_session' and 'user_temp'
+[Updated] Change to Users table - removed 'actkey' and 'userid' columns
+[Updated] Change to Configurations table - added 'ALLOW_MULTI_LOGONS' and 'PERSIST_NOT_EXPIRE' columns
+[Updated] Introduced Google reCaptcha
+[Fixed] Admin User Creation - better error handling of form fields
+
+Version 2.5
+
+[Changes] Updated hash algorithm to BCRYPT
+[Updated] Multiple file changes to accommodate new password hash
+[Updated] Removed references to usersalt and dropped column from USers table
+[Updated] Changed password hashing function to password_hash and password_verify functions.
+[Updated] Tidied up code.
+
+Version 2.4.1
+
+[Fixed] Problem not being able to change user password
+[Updated] admin/includes/Session.php - changed editAccount function - E-mail check section
+[Changes] Banned User is now kicked from session whilst logged on
+[Updated] admin/includes/Session.php - changed checkLogin function - added checkBanned bit
+[Updated] Changed admin/login.php page to make it clearer that it is only for admin logins
+
+Version 2.4
+
+[Changes] Allow logon with e-mail address
+[Changes] No longer allowed duplicate email addresses - option removed from admin panel (and database)
+[Changes] Admin Registration Summary page gives better error info on unsuccessful admin registration
+[Updated] admin/summary.php, admin/registration.php - removed duplicate e-mail address option.
+[Updated] In admin/includes folder updated - Functions.php, Adminfunctions.php, adminprocess.php, Configs.php, Login.php, Session.php
+[Updated] Updated Database - removed ALLOW_DUPE_EMAIL column from configuration table
+
+Version 2.3
+
+[Changes] Updated hash algorithm to SHA256 with backward compatibility to SHA1 
+[Updated] admin/configurations.php - Added option to change hash algorithm
+[Updated] admin/adminprocess.php - Updated configEdit function to update hash algorithm in DB
+[Updated] New HASH field in Database - Configurations table.
+[Updated] Updated process.php, Session.php, Registration.php, Login.php, Adminfunctions.php - changed
+sha1() to new hash() function.
+
+Version 2.2.1
+
+[fixed] Could not change user details correctly when 'Allow Duplicate Email' is Off
+[Updated] admin/includes/Adminfunctions.php - Updated adminEditAccount function
+
+Version 2.2.0
+
+[Changes] Added Logging facility
+[Changes] Delete Inactive Users (30 days)
+[added] admin/includes/Logger.php
+[added] admin/includes/logprocess.php
+[fixed] Deleting from administrators group removes user as an admin and vice versa
+[updated] navigation.php / top-navbar.php - added new menu structure
+[updated] Numerous files adding functionality for logging
+[updated] Numerous files cleaned up
+
+Version 2.1.0
+
+[Changes] Added Unique User Home Pages - Pages users are sent to after initial login. This can be set by the admin or individually for each user.
+[added] admin/user-settings.php 
+[updated] admin/adminuseredit.php - Added new tabpanel - line 295
+[updated] admin/navigation.php - Added link for user-settings.php page
+[updated] admin/top-navbar.php - Added link for user-settings.php page
+[updated] admin/includes/Functions.php - Added setIndividualPath function - line 98 
+[updated] admin/includes/adminprocess.php - Added updateUserHomePage & userSettingsEdit functions
+[updated] admin/includes/Configs.php - Added editUserSettings function - line 34
+[updated] admin/includes/process.php - Edited login function to allow unique user page redirection
+
+Version 2.0.3
+
+[updated] Moved email check to Functions.php (emailCheck) so it could be used in both Registration and Account editing
+
+Version 2.0.2
+
+[updated] adminuseredit.php - added code to stop Super Admin from promoting himself or seeing Other Admin Features for own profile.
+
+Version 2.0.1
+
+[fixed] adminprocess.php line 258 change $username_to_promote to $user_to_promote
+[fixed] process.php line 259 - add ..  . "#link-edit-user"); to end of line
+[updated] example/login.js - 114 - add new code for link-edit-user hash
+[updated] example/index.php - added help-block classes under in 'Edit Account' section
+[fixed] registration.php line 118 - remove name='select' causing 'Limit Username Chars' not to work

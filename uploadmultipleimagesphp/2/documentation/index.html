@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="Angry Frog">
+        <link rel="icon" type="image/ico" href="favicon.ico"/>
+
+        <title>Xavier PHP Login Script - Online Documentation</title>   
+
+        <!-- Custom styles for this template -->
+        <link rel="stylesheet" href="css/styles.css">    
+
+    </head>
+    <body data-spy="scroll" data-target=".navbar-sidebar">
+        <header class="container  container--header">
+            <div class="header">
+                <div class="header__logo">
+                    <a href="index.php">
+                        <img src="images/logo.png" alt="Xavier Logo" width="200" height="80">
+                    </a>
+                </div>
+
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <a href="#sidebar-menu" class="navbar-toggle collapsed">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                </div>
+
+                <nav class="navbar  navbar-default" role="navigation">
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse  navbar-collapse" id="buildpress-docs-navbar-collapse">
+                        <ul class="navigation">
+                            <li><a href="http://www.angry-frog.com">Support</a></li>
+                            <li><a href="https://www.angry-frog.com">Login Script</a></li>
+                            <li><a href="http://codecanyon.net">Changelog</a></li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </nav>
+            </div>
+
+            <div class="theme-header">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <h1 class="theme-header__title">Xavier PHP Login Script & Admin Backend</h1>
+                        <p class="theme-header__text">
+                            The Xavier PHP Login Script by Angry Frog.<br> Available @ CodeCanyon & Codester!
+                        </p>
+                        <p class="theme-header__text">
+                            Easily and safely protect your websites!
+                        </p>
+                    </div>
+                    <div class="col-xs-12  col-md-6">
+                        <img class="theme-header__cover" src="images/header-cover.png" alt="Xavier" width="880" height="516">
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="container  container--meta">
+            <ul class="meta">
+                <li>Author: <a class="meta__link" href="http://www.angry-frog.com">Angry Frog</a></li>
+                <li>Code Canyon: <a class="meta__link" href="http://codecanyon.net/user/siggles/portfolio">Xavier</a></li>
+                <li>Script Version: <span class="meta__focus">3.2.3</span></li>
+                <li>Created: <span class="meta__focus">May 4, 2016</span></li>
+                <li>Docs Last Modified: <span class="meta__focus">June 12, 2023</span></li>
+            </ul>
+        </div>
+        <div class="container  container--main">
+            <div class="row">
+                <div class="col-xs-12  col-md-9  col-md-push-3">
+                    <div class="content">
+
+                        <section>
+                            <h2 id="general">1. General</h2>
+                            <h3 id="thank-you">1.1. Thank You!</h3>
+                            <p>First of all, thank you!! Here at Angry Frog, we'd like to say a huge thank you for purchasing the Xavier PHP Login Script by Angry Frog. We hope you enjoy using it and that it suits all your needs.</p>
+                            <h3 id="about">1.2. About</h3>
+                            <p>The script is designed to be used both out of the box and to be edited and configured to suit your existing website. Aside from the administration panel, the Login Script is ultimately meant to facilitate the registration of user accounts, then to allow the editing of fields for that user account both by the user and by an admin, logging in, logging out and to protect pages based on login status and user level status among other things.If necessary, extra user fields can be added to the script (with some tweaking). Working examples are supplied alongside the admin backend which you can incorporate in to your own websites by lifting out the code. The php code within the example pages can be cut and pasted to existing pages on your website. For example, the script displaying a login box can be displayed on a number of pages.</p>                          
+                            <p>Although every effort has been made to ensure the script is bug free and easy to use there is always the chance for errors. If you do find a problem please notify us immediately through the CodeCanyon or Codester page or our Angry Frog website so we can try and ensure it gets fixed as quickly as possible.</p>
+                        </section>
+
+                        <section>
+                            <h2 id="installation">2. Installation</h2>
+                            <p>Installation is made easy with an automated installer that will create your database tables and populate them with some essential unique bits of info about your site. Or you can install manually using the instructions below. But first the requirements...</p>
+                            <h3 id="requirements">2.1. Requirements</h3>
+                            <p>The PHP Login Script has a few requirements which must be met before you are able to install and use it. In this section, these requirements are explained. In most cases, a basic shared hosting account with your hosting company will be more than enough to use the script.</p>                
+                            <ol>
+                                <li><strong>A webserver</strong> or web hosting account running on any major Operating System with support for PHP. Test locally using XAMPP or another stack.</li>
+                                <li><strong>A MySQL Database</strong> - Ask your hosting company to set this up for you if you are unsure.</li>
+                                <li><strong>PHP 5.5 or over</strong> - This is needed (among other things) to support PHP Data Objects (PDO) and PHP's password_hash function. The PDO extension defines a lightweight, consistent interface for accessing databases in PHP and allows the Login Script to work with a multitude of different databases. But it has only been tested fully with MySQL.</li>
+                                <li><strong>PHP's PDO extension enabled</strong> - you may have PHP 5.5 but PDO may still be disabled. In most cases, especially in shared hosting, this will already be enabled. The automatic installation will check for these requirements before you install.</li>
+                            </ol>
+                            <div class="warning">
+                                Create your empty MySQL database before proceeding. Make a note of the database name, username, password and server address. The latter is very often <i>localhost</i>. If you host with GoDaddy they will sometimes use a specific server name. If you are testing locally, using XAMPP for example, make sure to create an account in phpMyAdmin that also has a password and give that ccount full access to the database (use Check Priveleges to check).
+                            </div>
+                            <div class="info">
+                                If you are using a 3rd party hosting company for your website, they will often provide user friendly GUIs to do this, or they may be able to help if you open a support ticket.
+                            </div>
+                            <h3 id="auto-installation">2.2. Auto Installation</h3>
+                            <ol>
+                                <li>Upload the files (using FTP) to your hosting account keeping the files in their correct folder structure.</li>
+                                <li>Browse to the install folder (eg, http://www.yoursite.com/admin/install), a page will appear that will check you meet the requirements for the script.</li>
+                                <li>The next tab requires details of the paths in which you'll install the script. This includes the path to the admin folder, the Admin Home Page which will not need to be changed and the Login Page (for your visitors - not admins) which often, but not always, is located a folder beneath the admin folder. The elipses (..) means <i>go back a folder</i>.</li>
+                                <li>Put your database credentials in to the form on the next tab.</li>
+                                <li>The next tab requires some details for your new admin account. You can accept the default username of <i>Admin</i> or pick something else. As well as being added to the database as the Super Admin, A PHP constant is updated in the includes\constants.php file as additional security.</li>
+                                <li>Check the summary, then click Finish. The installer will then automatically edit the existing <strong>constants.php</strong> file with your database credentials, your Super Admin username and create the necessary tables in your existing database.</li>
+                                <li>The installer will let you know if you are successful. <strong>Remove (or rename) the install folder</strong> then click the link to take you to the Admin Login page and login with the credentials you supplied. If there is an error, re-check your database credentials.</li>
+                                <li>You should be ready to go.</li>
+                            </ol>
+                            <h3 id="manual-installation">2.2. Manual Installation</h3>
+                            <ol>
+                                <li>Edit the 'Database Constants' fields in the <strong>constants.php</strong> file located in the <strong>admin/includes</strong> folder. The file must be edited to include the details of your hosted database. If you are unsure of these details, your hosting company may be able to provide them for you. Also update the ADMIN_NAME constant with the name you'd like to use for admin account. Such as <code>define("ADMIN_NAME", "Admin");</code>. Save the updated file.</li>
+                                <li>Upload the files including the edited <strong>constants.php</strong> file to your hosting account keeping the files in their correct folder structure. If you have an existing website, make sure that none of the files will overwrite existing files or folders with the same name.</li>
+                                <li>Use the downloaded <strong>db_dump.sql</strong> file in the install folder to create and populate the tables in your new database. If you are unsure on how to do this, your hosting company may be able to help. A program such as phpMyAdmin, often supplied as part of a standard hosting package, can be used to run SQL commands on databases. Although this sounds complicated, this step is pretty straight forward once you know how. If you are still stuck, get help <a href="www.angry-frog.com">here</a>.</li>
+                                <li><strong>Remove the install folder</strong>.</li>
+                                <li>Browse to the <strong>index.php</strong> page in the examples folder and register an account with the username you used in the edited constants.php page (eg, admin). Make note of your new password. This will create the default admin account with level 10 access.</li>
+                                <li>Login from the <strong>index.php</strong> page in the admin folder. Change the settings on the General Site Settings page to match those of your site.</li>
+                                <li>You should be ready to go!</li>
+                            </ol>
+                            <h3 id="post-installation">2.3. Post Installation</h3>
+                            <p>Remove the install folder otherwise this poses a security risk.</p>
+                        </section>
+
+                        <section>
+                            <h2 id="admins">3. Super Admin / Standard Admin</h2>
+                            <p>We introduced the notion of the Super Admin and Standard Admin in a recent update. When you select your admin account during installation (automatic or manual), that user becomes the Super Admin. There can be only one Super Admin and that admin has full control and access to all options in the control panel. The user has userlevel 10 in the Users table in the database and is a member of the Administrators User Group by default.</p>
+                            <p>The Super Admin can promote normal users to admin (or level 9 in the Users Table). Promotion allows that user access to the control panel where they can carry out some administrative tasks such as creating, editing, activating and deleting users. They can also create, edit and delete User Groups. An admin is also added to the Administrators Group automatically alongside the Super Admin. A normal admin cannot edit the account of the Super Admin.</p>
+                        </section>
+
+                        <section>
+                            <h2 id="control-panel">4. The Admin Control Panel</h2>
+                            <p>The Admin Panel is where it all happens. From here you can make site-wide configuration changes and edit settings for individual users. Only the Super Admin and level 9 admins can have access. If you login as a standard user (lower than level 9 or 10) and browse to the admin/index.php page, it will show the login form even though you are still logged on. <div class="info">In theory, there is no reason a standard user needs to go to the admin/index.php page, thus why the login form shows even though you are logged on (as a standard user). Protected pages and the Admin Panel are two different things to standard users. They will login at Login forms you have created on your own site or you can test in the example, example-two and example-three pages.</div> </p>
+                            <h3 id="dashboard">4.1. The Dashboard</h3>
+                            <p>The Admin Panel Homepage presents you with a very detailed dashboard with info such as the amount of registered users and those currently online. You can also see the last 5 visitors to your site and the last 5 registered users, with links to their profiles.</p>                        
+                            <h3 id="general-settings">4.2. General Settings</h3>
+                            <p>Access the AdminPanel and visit the "General Settings" page. These Site Settings control the names for the Site, and the e-mail address and display name for outgoing e-mail. There are also important settings regarding the path to your site's root folder and home page.</p>
+                            <ul>
+                                <li><strong>Site Name: </strong>This is the short name for your company eg, &quot;<strong>Acme Enterprises Ltd</strong>&quot;. This variable is used in outgoing e-mail sent by the script, such as when registration is needed by e-mail activation. Also, on the example pages supplied with the script, this is used in the title element which ultimately displays your site name in a browser toolbar and when it is added to favorites, etc </li>
+                                <li><strong>Site Description: </strong>Similar to the Site Name, this variable can be uses instead in the title tag. </li>
+                                <li><strong>E-mail From Name: </strong>This variable is used in outgoing e-mails for the Display Name of the e-mail eg, <i>From: Henry Cooper</i>.</li>
+                                <li><strong>Site/Admin E-mail Address: </strong>This variable is used in outgoing e-mails for the the outgoing e-mail address.</li>
+                                <li><strong>Site Root: </strong>The Site Root and Home Page variables are used in conjunction for page redirection, such as when you log off the admin panel, you are redirected to the Home page.</li>
+                                <li><strong>Admin Home Page: </strong>See above. The Admin user home page (such as where to go after loggong out). The homePage() function combines these two variables creating an easy function you can use in place of a manually entered URL - <code>$configs->homePage();</code></li>
+                                <li><strong>Login Page: </strong>The everyday user will be redirected here after a successful login. The loginPage() function combines the Site Root and Login Page configs creating an easy function you can use in place of a manually entered URL - <code>$configs->loginPage();</code> Use two dots to donate going backwards a folder. Eg, ../mysite would be http://www.siteroot.com/mysite (- so one step back from the admin folder.</li>
+                                <li><strong>Date Format: </strong>This is the format in which the date will show in certain sections of the admin panel and / or website. You can change this to suit your location (the US?) or shorten or lengthen the month name for example. Get more details about the PHP Date function  - <a href="http://php.net/manual/en/function.date.php" target='_blank'>here</a>.</li>
+                            </ul>
+                            <h3 id="registration-settings">4.3. Registration Settings</h3>
+                            <p>On the Registration page are the options to change what activation is needed to register and the option to enable captcha. </p>
+                            <ul>
+                                <li><strong>Account Activation: </strong>Make changes to how your users complete the registration process. 
+                                    <ul>
+                                        <li><strong>Disable Activation: </strong>This disables registration. The registration form is not displayed and is replaced with an informational message.</li>
+                                        <li><strong>No Activation: </strong>Setting this option allows the user to register normally without the need for any additional activation process.</li>
+                                        <li><strong>By User (e-mail activation): </strong>Setting this option requires the user to activate their account by clicking a link sent to their registered e-mail address.</li>
+                                        <li><strong>By Admin: </strong>When this option is selected, following registration the user will be informed that they must wait for the Administrator to activate the account. The user will receive an email to this effect too, as will the Administrator who will then have the option to activate the user with the link provided in the e-mail or to visit the Administration Panel and activate the user there. </li>
+                                    </ul>
+                                </li>
+                                <li><strong>Limit Username Chars: </strong>Choose which set of characters a new user can use with his / her username.</li>
+                                <li><strong>Username Length: </strong>Minimum and Maximum characters that can be used in a new username.</li>
+                                <li><strong>Password Length: </strong>Minimum and Maximum characters that can be used in a new password.</li>
+                                <li><strong>Send Welcome E-mail: </strong>Option to send a Welcome e-mail to newly registered users when e-mail activation is not needed.</li>
+                                <li><strong>Enable Captcha: </strong>Setting this option to Yes adds the Google Recaptcha check before a user can register. More here on how to set this up for your site.</li>
+                                <li><strong>Username Lowercase: </strong>Setting this option to Yes changes all new registered usernames to Lowercase.</li>
+                            </ul>
+                            <h3 id="session-settings">4.4. Session Settings</h3>
+                            <p>Settings for timeouts and cookies.</p>
+                            <ul>
+                                <li><strong>User Inactivity Timeout: </strong>Amount of inactvity user is allowed in minutes before he/she is logged off. Also period of time before user is no longer considered an active or online user.</li>
+                                <li><strong>Guest Timeout: </strong>Timeout for Active Guests.</li>
+                                <li><strong>Reset Expiry at Logon: </strong>When set to Yes, when a user logs on with a Remember Me cookie, his expiry date will extend by the amount set below. When set to No, he will have to re-logon after the expiry date.</li>
+                                <li><strong>Cookie Expiry: </strong>Amount of time the 'remember me' cookie remains active on a visitor's machine in days. So the amount of time a user will be automatically logged in (on the same machine) before the cookie expires and they must re-enter their credentials.</li>
+                                <li><strong>Cookie Path: </strong>The Cookie path is the path at which the cookie will be accessible. / denotes the whole website including all subfolders.</li>
+                            </ul>
+                            <h3 id="security-settings">4.5. Security Settings</h3>
+                            <p>Disallow usernames from registration and IP addresses from registration and subsequently from logging in.</p>
+                            <ul>
+                                <li><strong>Disallow Usernames: </strong>Add a username using the Disallow Username field. That username, and any variations of it, will not be able to register at the site. For example, disallow the username 'cat' and you will not be able to log on with the name 'catty'.</li>
+                                <li><strong>Ban IP Addresses: </strong>Add an IP address and that IP will no longer be able to register and / or login at the site.</li>
+                            </ul>
+                            <h3 id="user-settings">4.6. User Settings</h3>
+                            <ul>
+                                <li><strong>Allow Multiple Logins: </strong>When set to Yes this will allow multiple logins from the same user account. The user's multiple sessions can then be seen from the User Admin main page or from their individual page within the Admin panel.</li>
+                                <li><strong>Individual User Folders: </strong>This page allows you to turn on or off the option to set individual home pages for users, which they are directed to after logon. You can either set this option globally on this page or individually on each user's admin user edit page. You can also choose to exclude admin so that they are never redirected.</li>
+                            </ul>
+
+                            <div class="info"><strong>Time incorrect?</strong> Change the default timezone in the controller.php file. Such as <i>date_default_timezone_set('America/New_York');</i></div> 
+                        </section>
+                        
+                        <section>
+                            <h2 id="user-admin">5. User Admin</h2>
+                            <p>On this page you can view all of your users and by clicking the tabs you can also view those awaiting activation plus all of the user sessions currently in progress. <strong>NB : Some sessions that show here may have actually expired due to the user not logging out and their PHP session expiring.</strong> Access the Admin Panel and click the "User Admin" button. 
+                                The User Table shows a list of paginated users, with a Username Column, user status column, e-mail address column and both the Registered time & date and Last Login time and date. You can also search for user's details and Admin can create their own user accounts by clicking the <i>Create User</i> button.</p>
+                            <p>You can sort the users by clicking the column headers. Reveal more details for each user by clicking on the individual username or clicking the View button. Finally, delete all inactive users (those who haven't logged in for 30 days) by clicking that particular button.</p>  
+                            <h3 id="user_activation">5.1. Users Awaiting Activation</h3>
+                            <p>Accounts showing here are awaiting either Admin or User Activation. Multiple activations can be done by selecting more than one user. An email is sent to the user after you activate him or her alerting them.</p>
+                            <h3 id="user_sessions">5.2. Current Sessions</h3>
+                            <p>You can see all of the existing User Sessions here. The 'Last' column shows when that user last refreshed or changed a page. The Expiry column shows when their session will expire.</p>
+                            <h3 id="adminuser_edit">5.3. Admin User Edit</h3>
+                            <p>After clicking on an individual user, the admin has the ability to edit all of that user's details, including the Username itself.</p>              
+                            <p>The admin can change the user's username, firstname, lastname, password and e-mail address. They can also check the last time a user logged on, the date and time they registered and the IP address they registered with and last logged on with. You can also see all of he user's sessions and any existing logs for that user.</p>
+                            <p>The Home Page tab allows you to set individual user Home Pages that your user is directed to after login, provided the setting is turned on and set to 'By User' rather than 'By Admin'.</p>
+                            <p>Other button give the option to ban and delete a user. The Super Admin can also promote a user to Admin here.</p>
+                            <h3 id="banning_user"><strong>5.4. Banning a User</strong></h3>
+                            <p>It's possible to ban a user either temporarily or you can leave them permanently banned. Go to the User Admin page, visit the individual user's profile page, click the Other Admin Features tab and click the Ban User button. The button then changes to allow you to unban the user.</p>                           
+                            <h3 id="deleting_user"><strong>5.5. Deleting a User</strong></h3>
+                            <p>Delete a user from the User's individual profile, under the Other Admin Features tab. This permanently deletes the user removing them from the banlist table in the database and from any groups they belong to and any logs relating to that user. If you don't wish for a user to re-register with the same username, it is recommended that you add the user's username to the disallowed username list.</p>
+                        </section>
+                        
+                        <section>
+                            <h2 id="user-groups">6. User Groups</h2>
+                            <p>On the User Groups page you can view all existing User Groups, edit and delete those Groups and add & delete members from the groups. To add a member to a group, click on the pencil to edit that particular group then in the pop up window click in to the Add Users box where a list of users (who are not already members of the group) will appear. Click on one or more users to fill to add them to the field, then click Edit Group button (bottom right). You can also add a user to a group, and see all groups, from the individual user's profile. Click the Group Membership tab and select (or delete) the groups there.</p>                   
+                            <p>You can also create new User Groups, assigning a name and Level to them. Multiple User Groups can have the same group level. They cannot have level 1 as that is reserved for the administrators group which all Super Admins and Standard Admins become members of. You can then protect pages or sections of pages with code that checks for either individual group membership or Group Level status. For example, you could protect a page from all users who are members of groups that are under or over a certain group level (eg, lower or higher than 5). More examples of how to protect pages can be found <a href="#protecting-pages">here</a>.</p>
+                        </section>
+                        
+                        <section>
+                            <h2 id="example-pages">7. The Example Pages</h2>
+                            <p>The example pages supplied with the script are there to show you how to implement the registration process, how to allow your users to edit their profile, when they forget a password and when they need to activate their account after registration. The pages can be used as they are or parts of the code can be copied out of the example pages and used in your own website.</p>
+                            <h3 id="user_activation_web">7.1. Setting Up User Activation</h3>
+                            <p>When a user registers and the User (or Admin) Activation option is selected, they'll be warned that they must activate their account first. If User activation is selected, they'll receive an email with a link to do so. For this (and the admin activation) to work on your own website as it does in the example pages, you'll need to include some code in a page on your website and direct user's (or admin) there after they click the link in the email generated by the script. By default the script that generates the activation emails <strong>(includes/Mailer.php)</strong>, sends the users to the Login Page setting - <code>$this->configs->loginPage()</code>. </p>
+                            <p>On that page there is a line of code that checks to see if a request to have an account activated has been sent - <code>if ((isset($_GET['mode'])) && ($_GET['mode'] == 'activate'))</code><br><code> { $session->activateUser($_GET['user'], $_GET['activatecode']); }</code></p>
+                            <p>This code checks the URL you have clicked on in the activation email to make sure you have the correct details, and then displays a message. Copy this code in to your own website and if it is not the LoginPage make sure to update the link that gets sent out by the mailer.php page. Enclose the PHP with HTML to make sure it is formatted nicely. </p>
+                        </section>
+                        
+                        <section>
+                            <h2 id="protecting-pages">8. Protecting Pages</h2>
+                            <p>Protecting pages is probably one of the main reasons you choose to use this script and thankfully it is very easy. There are a number of ways to protect pages or sections of a page. This can be dependent on login status (logged on OR of), whether or not you are an Admin, a Super Admin or what group or group user level you belong to.</p>
+                            <p>The first rule of protecting your pages is that <strong>at the top of each and every page you must include the following file</strong>. If you are new to PHP, remember to enclose the include function with PHP tags.</p>
+                            <p><code>include("includes/controller.php");</code></p>
+                            <p>NB : If you're protecting pages in subfolders you may need to change the path to the controller.php file.</p>
+                            <p>The simplest way of protecting whole pages is to use code at the top of the page to check whether the user is logged in, whether they are admin or a member of a certain group. When the check is carried out you can then decide what to do, such as throw up an error message or redirect to another page. An example of protecting a page against non-admin access is given below:</p>
+                            <pre><code>if(!$session->isAdmin()){ header("Location: ".$configs->homePage()); exit; }</code></pre>
+                            <p>The previous code basically reads: If the logged on user is not <code>!</code> an admin, redirect them <code>header("Location:</code> to the home page <code>$configs->homePage()</code> and do not run any further script on that page <code>exit;</code>. The <code>$configs->homePage();</code> object method is a combination of the Site Root and Home Page settings you set on the General Settings page.</p>
+                            <div class="info">The Home Page and Login Page are chosen at installation time. By default the Home Page is the index.php page in the admin subfolder accessible only by admin. The Login Page is set as index.php in the example folder by default.</div>
+                            <p>Some methods of protecting content based on a user's status require a closing curly brace <code>}</code> at the end of the page, such as when you are using an if/else statement. For example, if the user <b>IS</b> an admin show some secret content, otherwise show some general content. A very rudimentary example is given here:</p>
+                            <pre><code>if($session->isAdmin()){ echo 'You are an Admin'; } else { echo 'You are not an Admin'; }</code></pre>
+                            <p>So in summary, you can protect pages using the following methods:</p>
+                            <ul>
+                                <li>Protect Whole Pages with code at top of the page.</li>
+                                <li>Redirect users away from a page if they do not meet a certain criteria.<br><br> eg, <code>if(!$session->logged_in){ header("Location: index.php"); } else {</code> <em>Protected Content</em> <code>}</code><br><br></li>
+                                <li>Protect Pages or sections of a page due to admin status or even Super Admin Status<br><br> eg, <code>if($session->isAdmin()){</code> <em>Protected Text</em> <code>} else {</code> <em>Non Protected Text</em> <code>}</code><br><br></li>
+                                <li>Protect Pages or sections of a page due to login status<br><br> eg, <code>if($session->logged_in){</code> <em>Protected Text</em> <code>} else {</code> <em>Non Protected Text</em> <code>}</code><br><br></li>
+                                <li>Protect Pages or sections due to group membership - <code>if($session->isMemberOfGroup('Wizards')){</code> <em>Protected Text</em> <code>}</code><br><br></li>
+                                <li>Protect Pages or sections due to group level status - for example use the function already created for you - <code>if($session->isMemberOfGroupOverLevel(5)){</code> <em>Protected Text</em> <code>}</code></li>
+                            </ul>
+                            <p>If you are new to PHP it is important to get to grips with the if/else statement. You can have multiples if/else statements on one page.</p>
+                        </section>
+                        
+                        <section>
+                            <h2 id="redirection">9. Redirection</h2>
+                            <p>Every website is different and you may choose to have your users logging in at one or more different pages using different forms. You may also want to send users to different pages after they log out. And all the while separating the standard user account from the admin account. By appending a query string to the end of your form action you can choose where to send your user after he or she logs in.</p>
+                            <h3 id="logging_in">9.1. Logging In</h3>
+                            <p>By appending a query string to the end of your form action you can choose where to send your user after they successfully login. For example <code>&lt;form action="includes/process.php?path=referrer" method="POST"></code> will send the logged in user back to the page where they tried to login (where you may have some PHP code that will show different content to logged in users). </p>
+                            <p><code>&lt;form action="includes/process.php?path=admin" method="POST"></code> will send the logged in user to the Admin Home Page. <code>$configs->homePage()</code></p>
+                            <p>The default setting <code>&lt;form action="includes/process.php" method="POST"></code> will send the logged in user to the Login Page. <code>$configs->loginPage()</code></p>
+                            <div class="info">The Home Page and Login Page are chosen at installation time. By default the Home Page is the index.php page in the admin subfolder accessible only by admin. The Login Page is set as index.php in the example folder by default.</div>
+                            <p><strong>Create your own</strong> - Finally you can create your own redirection by using the commented out code in the process.php page (look for the login function). Create your own path / URL to direct your users to.</p>
+                            <h3 id="logging_out">9.2. Logging Out</h3>
+                            <p>Much like Logging In, by appending a query string you can direct your users where you want. Add a link anywhere on the page that directs your users to the logout.php page. Without a query string, this will log your user out and send them to the loginPage() - which will be the index.php page in the example folder if nothing has changed since installation. </p>
+                            <p>Add the following code to create a link that sends your logged out user to the index.php page in the admin folder (and thus to the admin login form) - <code>&lt;a href="logout.php?path=admin">Log out&lt;/a></code>
+                            <p>Add <code>&lt;a href="logout.php?path=referrer">Log out&lt;/a></code> to send your user back to the page they logged out at. Or create your own by using the commented out code in the logout.php page.</p>
+                            
+                        </section>
+                        
+                        <section>
+                            <h2 id="new-fields">10. Adding New Fields</h2>                            
+                            <p>It's possible to extend the script to include new registration / profile fields for your users. This could include an address or phone number for example, the choices are limitless.</p>
+                            <p>The first thing you need to do is create the corresponding column in the user's table in your database. For example, in a MySQL database you may wish to create a column called 'telephone' and have it of type varchar(20). Instructions on how to create additional columns in your database goes beyond the scope of these instructions but if you are using shared hosting, you will often have user friendly GUIs available to you to do this, such as the industry leading <b>phpMyAdmin</b>.</p>
+                            <p>The following examples given below assume you are trying to add a telephone field to your script:</p>
+                            <p>You will need to make changes to the following files:</p>
+                            <ul>
+                                <li><span class="file">Any registration page - such as register.php</span></li>
+                                <li><span class="file">admin/includes/Adminfunctions.php</span></li>
+                                <li><span class="file">admin/includes/process.php</span></li>
+                                <li><span class="file">admin/includes/Registration.php</span></li>
+                                <li><span class="file">admin/includes/Session.php</span></li>
+                                <li><span class="file">admin/adminuseredit.php</span></li>
+                                <li><span class="file">admin/includes/adminprocess.php</span></li>
+                                <li><span class="file">admin/includes/Adminfunctions.php</span></li>
+                            </ul>
+                            
+                            <h4>Your Registration Page</h4>
+                            <p>On this page they fill out the fields in a form to submit their details so you'll need to add a new field for the telephone entry.</p>
+                            <p>Find the code for the form and add your field like so:</p>
+                            <pre><code>&lt;input type=&quot;text&quot; name="telephone" placeholder="Telephone Number" value="<&#63;php echo Form::value('telephone'); &#63;>" /><&#63;php echo Form::error('telephone'); &#63;></code></pre>
+                            
+                            <h4>admin/includes/process.php</h4>
+                            <p>The process.php page is responsible for taking form entries and processing them.</p>
+                            <p>Find the <i>register</i> function and add your telephone field in to the following code:</p>
+                            <pre><code>$retval = $registration->register($_POST['user'], $_POST['firstname'], $_POST['lastname'], <strong>$_POST['telephone'] .....</strong></code></pre>
+                            <p>Whilst you are editing the <b>process.php</b> page you'll also want to edit the part of the script on this page that deals with the user's ability to edit their own account. The <i>editAccount</i> function deals with the submitted user edit profile form submission. As before, edit the part of the script that accepts the telephone entry in the POST array. This calls the <i>editAccount</i> function in the <b>includes/session.php</b> page which we'll edit later.</p>
+                            <pre><code>$retval = $session->editAccount($_POST['curpass'], $_POST['newpass'], $_POST['conf_newpass'], <strong>$_POST['telephone'] .....</strong></code></pre>
+                            
+                            <h4>admin/includes/Registration.php</h4>
+                            <p>The Registration.php class file is responsible for taking the submitted form fields, checking them for validity, etc and then adding them to the database. </p>
+                            <p>Find the <i>register</i> method and add the telephone variable: (order is important here!)</p>
+                            <pre><code>function register($user, $firstname, $lastname, <b>$telephone, ...</b> <br><br>** make sure it is in the same order as the procRegister function in the process.php file (eg, after the lastname field).</code></pre>
+                            <p>The <b>Registration.php</b> class file is also responsible for checking and validating the individual entries in the registration form submission. For example, in the case of the username field, it will check their is an entry at all (ie, it is not empty), its length (that it is not too small or too long), whether it is alphanumeric (to avoid any nasty or malicious characters), whether the username is reserved, already in use and finally, banned. Sensible coders will check their new fields here too.</p>
+                            <p>So in the case of the new telephone field, you may want to check that the submitted field contains only numbers and that it is neither too long or too short. </p>
+                            <p>Further down the <i>register</i> function of the <b>Registration.php</b> class file, if all user form entries pass their individual validity tests, the <i>addNewUser</i> function gets called. Pass the new <i>$telephone</i> variable to it:</p>
+                            <pre><code>if($this->addNewUser($user, $firstname, $lastname, <b>$telephone ...</b> <br><br>(order is not important here but the <i>addNewUser</i> function must accept the $telephone variable in the same order in a minute)</code></pre>
+                            <p>Finally, in the <b>Registration.php</b> class file, find the <i>addNewUser</i> method. Add the $telephone variable at the top...</p>
+                            <pre><code> function addNewUser($username, $firstname, $lastname, <b>$telephone...</b><br><br> ** Order is important! It must be in the same order as the code above, when <i>addNewUser</i> was called.</code></pre>
+                            <p>Then further down, alter the SQL query and execution of that query like so:</p>
+                            <pre><code> $query = "INSERT INTO users SET username = :username, firstname = :firstname, lastname = :lastname, <b>telephone = :telephone, ...</b><br><br> then <br><br> return $stmt->execute(array(':username' => $username, ':firstname' => $firstname, ':lastname' => $lastname, <b>':telephone' => $telephone</b> ...</code></pre>
+                            
+                            <h4>admin/includes/session.php</h4>
+                            <p>In the <b>includes/session.php</b> file you only need to edit the <i>editAccount</i> function. Find the first line of the function that accepts the arguments sent from the <i>procEditAccount</i> function on the <b>includes/process.php</b>. You'll remember that you added the $telephone variable after the confnewpass argument, so follow the same order here.</p>
+                            <pre><code>function editAccount($subcurpass, $subnewpass, $subconfnewpass, <b>$telephone, ...</b> <br><br>(It's important to follow the same order as the order in which the arguments were submitted in <i>includes/process.php</i>)</code></pre>
+                            <p>Further down the function, you can do your validation checks to make sure the user's submitted data is correct and not malicious, etc. At the bottom of the function, add the code that updates the field in the database. After the e-mail update, add:</p>
+                            <pre><code>/* Change Email */
+if($subemail){
+    Functions::updateUserField($this->username, "email", $subemail);
+}<br>
+<b>/* Change Telephone */
+if($telephone){
+    Functions::updateUserField($this->username, "telephone", $telephone);
+}</b>
+<br><br>(The second argument is the column name in the database, the third is the variable you wish to update it with.)</code></pre>                            
+                            
+                            <h4>admin/adminuseredit.php</h4>
+                            <p>The <b>adminuseredit.php</b> page is where an administrator can make changes to a user's account. Add the following code somewhere on the page to add the option to edit the telephone field.</p>
+                            <pre><code>&lt;div class="form-group &lt;?php if(Form::error("telephone")){ echo 'has-error'; } ?>">
+&lt;label for="inputTelephone" class="col-sm-4 col-md-3 control-label">Telephone:&lt;/label>
+    &lt;div class="col-sm-4 col-md-4">
+        &lt;input type="text" name="telephone" class="form-control" id="inputTelephone" placeholder="Telephone" value="&lt;?php if(Form::value("telephone") == ""){ echo $req_user_info['telephone']; } else { echo Form::value("telephone"); }?>">
+    &lt;/div>
+    &lt;div class="col-sm-4">
+        &lt;small>&lt;?php echo Form::error("telephone"); ?>&lt;/small>
+    &lt;/div>
+&lt;/div></code></pre>
+                            
+                            <h4>admin/includes/adminprocess.php</h4>
+                            <p>The <b>adminprocess.php</b> page accepts the form fields sent by the <b>adminuseredit.php</b> page and processes them.</p>
+                            <p>Edit the <i>editAccount</i> function.</p>
+                            <pre><code>$retval = $adminfunctions->adminEditAccount($_POST['username'], $_POST['firstname'], $_POST['lastname'], <b>$_POST['telephone']...</b></code></pre>
+                            
+                            <h4>includes/Adminfunctions.php</h4>
+                            <p>The Adminfunctions.php updates the database with the updated fields. This happens in the <i>adminEditAccount</i> method. First update the top line of the function with the new parameter.</p>
+                            <pre><code>public function adminEditAccount($subusername, $subfirstname, $sublastname, <b>$telephone</b></code></pre>
+
+                            <p>Carry out any validation you require on the new field, then further down add the following code to add the new telephone field to the database.</p>
+                            <pre><code>if($telephone){
+    $this->functions->updateUserField($subusertoedit,"telephone",$telephone);
+}</code></pre>
+
+                            <h4>Displaying the New Info (eg, userinfo.php)</h4>
+                            <p>The <b>userinfo.php</b> page might display the user's details, as you would expect with a user's profile page. You only need to add this bit of code (the bit in bold) where you want it to appear.</p>
+                            <pre><code>$req_user_info = $functions->getUserInfo($req_user);
+<strong>echo "&lt;strong>Telephone: &lt;/strong> ".$req_user_info['telephone']."&lt;br>";</strong></code></pre>
+                            
+                            <h4>Editing the Info (eg, useredit.php)</h4>
+                            <p>An example <b>useredit.php</b> page might allow a user to change their details. The updated form data from the user would be submitted to <b>includes/process.php</b></p>
+                            <p>Add the text field that accepts the telephone number:</p>
+                            <pre><code>&lt;input type="text" name="telephone" placeholder="Telephone" value="&lt;?php if(Form::value('telephone') == ""){ echo $session->userinfo['telephone']; }else{ echo Form::value("telephone"); } ?>"><br>&lt;?php echo Form::error("telephone"); ?></code></pre>
+                            <p><b>value field</b> = It's important to understand what is happening in the <i>value</i> attribute of the telephone form field here. It works in this order: it first checks to see whether a form has already been submitted (with errors) and enters the details of the previously submitted telephone number (handy for when another field has errors but you don't want the user to be greeted with all empty fields again). If no form has been submitted, it enters the the existing user's telephone number (if one exists).</p>
+                            <p>This bit of code <code>&lt;?php echo Form::error("telephone"); ?></code> displays any errors with the telephone field after submitting your form, should you have any validation in place.                            
+                            
+                            <p>These instructions should be enough to add an extra field to your script, bearing in mind that you will want to add some validation checks to any additional fields to choose to use. PDO, by its very nature is a deterrent against SQL injection as it uses prepared statements but it's better to be safe than sorry.</p>
+                            
+                        </section>
+
+                        <section>
+                            <h2 id="plugins">11. Plugins</h2>
+                            <p>The Xavier PHP Login Script uses a number of third party plugins which are listed below. Any CSS or Javascript for that particular plugin needs to be included on the page for the plugin to work. Check out the individual example pages for more details of how to do this.</p>
+                            <table class="table table-hover table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Plugin<span></span></th>
+                                        <th>Website<span></span></th>
+                                        <th>License<span></span></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Awesome Bootstrap Checkbox</td><td><a href="https://github.com/flatlogic/awesome-bootstrap-checkbox">https://github.com/flatlogic/awesome-bootstrap-checkbox</a></td><td>MIT</td></tr>
+                                    <tr><td>Slider for Bootstrap</td><td><a href="https://github.com/seiyria/bootstrap-slider">https://github.com/seiyria/bootstrap-slider</a></td><td>MIT</td></tr>
+                                    <tr><td>Bootstrap Toggle</td><td><a href="http://www.bootstraptoggle.com/">http://www.bootstraptoggle.com/</a></td><td>MIT</td></tr>
+                                    <tr><td>Chartist.js</td><td><a href="https://gionkunz.github.io/chartist-js/">https://gionkunz.github.io/chartist-js/</a></td><td>MIT</td></tr>
+                                    <tr><td>Morris Charts</td><td><a href="http://morrisjs.github.io/morris.js/">http://morrisjs.github.io/morris.js/</a></td><td>MIT</td></tr>
+                                    <tr><td>Chart.js</td><td><a href="http://chartjs.org/">http://chartjs.org/</a></td><td>MIT</td></tr>
+                                    <tr><td>Highcharts</td><td><a href="http://www.highcharts.com/">http://www.highcharts.com/</a></td><td><a href="http://www.highcharts.com/license" target="_blank">More Info</a></td></tr>
+                                    <tr><td>Chosen</td><td><a href="https://github.com/harvesthq/chosen">https://github.com/harvesthq/chosen</a></td><td>MIT</td></tr>
+                                    <tr><td>DataTables</td><td><a href="datatables.net">datatables.net</a></td><td><a href="http://www.datatables.net/license" target="_blank">More Info</a></td></tr>
+                                    <tr><td>Datepicker for Bootstrap</td><td><a href="https://github.com/eternicode/bootstrap-datepicker">https://github.com/eternicode/bootstrap-datepicker</a></td><td>Apache</td></tr>
+                                    <tr><td>jQuery Validation Plugin</td><td><a href="https://github.com/jzaefferer/jquery-validation">https://github.com/jzaefferer/jquery-validation</a></td><td>MIT</td></tr>
+                                    <tr><td>FullCalendar </td><td><a href="http://fullcalendar.io/">http://fullcalendar.io/</a></td><td>MIT</td></tr>
+                                    <tr><td>jQuery Tags Input Plugin</td><td><a href="http://xoxco.com/clickable/jquery-tags-input">http://xoxco.com/clickable/jquery-tags-input</a></td><td>MIT</td></tr>
+                                    <tr><td>Jasny Bootstrap</td><td><a href="http://jasny.github.io/bootstrap">http://jasny.github.io/bootstrap</a></td><td>Apache</td></tr>
+                                    <tr><td>Magnific Popup</td><td><a href="http://dimsemenov.com/plugins/magnific-popup/">http://dimsemenov.com/plugins/magnific-popup/</a></td><td>MIT</td></tr>
+                                    <tr><td>MetisMenu</td><td><a href="https://github.com/onokumus/metisMenu">https://github.com/onokumus/metisMenu</a></td><td>MIT</td></tr>
+                                    <tr><td>nouislider</td><td><a href="http://refreshless.com/nouislider/">http://refreshless.com/nouislider/</a></td><td>WTFPL</td></tr>
+                                    <tr><td>Pnotify</td><td><a href=" http://sciactive.com/pnotify/"> http://sciactive.com/pnotify/</a></td><td>Apache</td></tr>
+                                    <tr><td>Slimscroll</td><td><a href="http://www.rocha.la/jQuery-slimScroll">http://www.rocha.la/jQuery-slimScroll</a></td><td>MIT</td></tr>
+                                    <tr><td>Sweetalert</td><td><a href="http://t4t5.github.io/sweetalert/">http://t4t5.github.io/sweetalert/</a></td><td>MIT</td></tr>                                    
+                                </tbody>
+                            </table>
+                            <div class="warning">
+                                The links and license information were believed to be right at the time of writing. If you spot an error please let us know. If we've used your plugin and haven't added the link here, please contact us.
+                            </div>
+                        </section>
+
+                        <section>
+                            <h2 id="thefonts">12. Fonts</h2>
+                            <p>The Xavier Admin Theme makes use of the brilliant <a href="https://fontawesome.com/" target="_blank">Font Awesome</a> range of icons. We also include the free Glyphicon set that came with earlier versions of Bootsrap, should it be needed.</p>
+                            <p>The fonts are included at the top of the page by adding the link to the respective css file e.g.  <code>&#x3C;link href="fonts/font-awesome/css/fontawesome-all.min.css" rel="stylesheet"&#x3E;</code></p>
+                            <p>To include an icon on the page simply add the following code <code>&#x3C;span class="fas fa-times"&#x3E;&#x3C;/span&#x3E;</code>. Use additional CSS to change the size and color of the icons. A list of the available icons can be found on the <strong>ui-icons.html</strong> page with the relevant code needed to include it on the page.</p>
+                        </section>
+
+                        <section>
+                            <h2 id="extras">13. Extras</h2>
+                            <h3 id="customizations">13.1. Customizations</h3>
+                            <p>If you need advanced customizations on the script or theme, we are available for that as well.</p>
+                            <p>Just drop us an email to: <a href='mai&#108;&#116;o&#58;&#105;nf%6F%4&#48;a&#110;gry-%&#54;6&#37;72og&#46;&#99;&#111;m'>&#105;nfo&#64;angry-&#102;&#114;o&#103;&#46;com</a></p>
+                            <h3 id="changelog">13.2. Changelog</h3>
+                            <p>Changelog of the script is available on <a href="http://codecanyon.net/">CodeCanyon</a> at the end of the item page.</p>
+                            <h3 id="support">13.3. Support</h3>
+                            <p>If you need more help after all, you can <a href="http://www.angry-frog.com/contact/" target="_blank">contact us</a>.</p>
+                        </section>
+                    </div>
+                </div>
+                <div class="col-xs-12  col-md-3  col-md-pull-9" id="sidebar-menu">
+
+                    <div class="js-sidebar-offset"></div>
+                    <div class="sidebar  navbar-sidebar" id="main-sidebar-menu">
+                        <ul class="nav  sidebar__navigation" role="tablist">
+
+                            <li class="dropdown">
+                                <a href="#general-and-installation">General</a>
+                                <ul class="sidebar__navigation__dropdown">
+                                    <li><a href="#thank-you">Thank You</a></li>
+                                    <li><a href="#about">About</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="#installation">Installation</a>
+                                <ul class="sidebar__navigation__dropdown">
+                                    <li><a href="#requirements">Requirements</a></li>
+                                    <li><a href="#auto-installation">Automatic Installation</a></li>
+                                    <li><a href="#manual-installation">Manual Installation</a></li>
+                                    <li><a href="#post-installation">Post Installation</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="#admins">Super / Standard Admins</a>
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="#control-panel">The Admin Control Panel</a>
+                                <ul class="sidebar__navigation__dropdown">
+                                    <li><a href="#dashboard">The Dashboard</a></li>
+                                    <li><a href="#general-settings">General Settings</a></li>
+                                    <li><a href="#registration-settings">Registration Settings</a></li>
+                                    <li><a href="#session-settings">Session Settings</a></li>
+                                    <li><a href="#security-settings">Security Settings</a></li>
+                                    <li><a href="#user-settings">User Settings</a></li>
+                                </ul>
+                            </li>
+                            
+                            <li class="dropdown">
+                                <a href="#user-admin">User Admin</a>
+                                <ul class="sidebar__navigation__dropdown">
+                                    <li><a href="#user_activation">User Activation</a></li>
+                                    <li><a href="#user_sessions">User Sessions</a></li>
+                                    <li><a href="#adminuser_edit">Admin User Edit</a></li>
+                                    <li><a href="#banning_user">Banning a User</a></li>
+                                    <li><a href="#deleting_user">Deleting a User</a></li>
+                                </ul>
+                            </li>
+                            
+                            <li class="">
+                                <a href="#user-groups">User Groups</a>
+                            </li>
+                            
+                            <li class="dropdown">
+                                <a href="#example-pages">Example Pages</a>
+                                <ul class="sidebar__navigation__dropdown">
+                                    <li><a href="#user_activation_web">User Activation</a></li>
+                                </ul>
+                            </li>
+                            
+                            <li class="">
+                                <a href="#protecting-pages">Protecting Pages</a>
+                            </li>
+                            
+                            <li class="dropdown">
+                                <a href="#redirection"> Redirection</a>
+                                <ul class="sidebar__navigation__dropdown">
+                                    <li><a href="#logging_in">Logging In</a></li>
+                                    <li><a href="#logging_out">Logging Out</a></li>
+                                </ul>
+                            </li>                            
+                            
+                            <li class="">
+                                <a href="#new-fields">Adding New Fields</a>
+                            </li>
+
+                            <li class="">
+                                <a href="#plugins">Plugins</a>
+                            </li>
+                            
+                            <li class="">
+                                <a href="#thefonts">Fonts</a>
+                            </li>
+                            
+                            <li class="dropdown">
+                                <a href="#extras">Extras</a>
+                                <ul class="sidebar__navigation__dropdown">
+                                    <li><a href="#customizations">Customizations</a></li>
+                                    <li><a href="#changelog">Changelog</a></li>
+                                    <li><a href="#support">Support</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                        <hr class="sidebar__divider">
+                        <div class="sidebar__credits">
+                            Author: <a href="https://twitter.com/angryfrogx">Angry Frog</a><br>
+                            Copyright &copy; by <a href="http://www.angry-frog.com">Angry Frog</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/main.js"></script>
+
+    </body>
+</html>
